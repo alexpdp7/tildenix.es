@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ssh -o Port=2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@localhost
