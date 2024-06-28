@@ -1,0 +1,3 @@
+#!/bin/sh
+
+qemu-system-x86_64 -nographic -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::2222-:22 -drive if=virtio,format=qcow2,file=image.qcow2 -accel kvm -m 2G
