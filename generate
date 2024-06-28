@@ -1,0 +1,3 @@
+#!/bin/sh
+
+nix-portable nix shell nixpkgs#nixos-generators -c nixos-generate -c configuration.nix -f qcow
