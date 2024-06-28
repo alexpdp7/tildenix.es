@@ -1,3 +1,9 @@
-#!/bin/sh
+#! /usr/bin/env -S nix-portable nix
+#! nix shell nixpkgs#nixos-generators --command /bin/sh
 
-nix-portable nix shell nixpkgs#nixos-generators -c nixos-generate -c configuration.nix -f qcow
+nixos-generate -c configuration.nix -f qcow
+
+# ugly hack to get the image from out of the nix store; run generate again (to ensure it doesn't generate output) to capture the nix path
+# (the nix path only works inside nix-portable)
+i=$(nixos-generate -c configuration.nix -f qcow)
+cp $i image.qcow2
