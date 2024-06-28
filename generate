@@ -7,3 +7,4 @@ nixos-generate -c configuration.nix -f qcow
 # (the nix path only works inside nix-portable)
 i=$(nixos-generate -c configuration.nix -f qcow)
 cp $i image.qcow2
+chmod ug+w image.qcow2
