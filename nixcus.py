@@ -26,7 +26,6 @@ def launch(name, configuration):
         "-c", f"limits.memory={MEM_GB}GiB")
     wait(name)
     push_config(name, configuration)
-    rebuild(name)
 
 
 def wait(name):
@@ -45,6 +44,7 @@ def push_config(name, config_nix_in):
     _sp("incus", "file", "push",
         config_nix_in,
         f"{name}/etc/nixos/configuration.nix")
+    rebuild(name)
 
 
 def rebuild(name):
