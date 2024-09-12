@@ -50,4 +50,10 @@
   };
 
   services.ergochat.enable = true;
+  services.soju = {
+    enable = true;
+    listen = [
+      "irc+insecure://:6668"
+    ];
+  };
 }
