@@ -7,3 +7,9 @@ $ ./nixcus.py launch test configuration.nix
 ```
 
 This command creates a `test` virtual machine with the configuration in the `configuration.nix` file.
+
+To push configuration updates:
+
+```
+$ ./nixcus.py push_config test configuration.nix
+```
